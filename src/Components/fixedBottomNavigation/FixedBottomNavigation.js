@@ -3,8 +3,6 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -54,7 +52,6 @@ export default function FixedBottomNavigation() {
           }}
         >
           <BottomNavigationAction label="Dial" icon={<PhoneIcon />} />
-
           <BottomNavigationAction label="Contacts" icon={<PermContactCalendarIcon />} />
         </BottomNavigation>
       </Paper>
