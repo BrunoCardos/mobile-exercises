@@ -10,12 +10,17 @@ import VolumeDownIcon from '@mui/icons-material/VolumeDown';
 import MicIcon from '@mui/icons-material/Mic';
 import CallEndIcon from '@mui/icons-material/CallEnd';
 import sound from './classic.mp3'
+import police from './police.mp3'
 
 
 function Dial(){
 
     function play(){
-        new Audio(sound).play()
+        if (display.join('') == 112){
+            new Audio(police).play()
+        } else{
+            new Audio(sound).play()
+        }
     }
 
     const [display, setDisplay] = useState([])
@@ -84,7 +89,7 @@ function Dial(){
                 <Avatar onClick={(e)=> add(e)} sx={{ bgcolor: deepOrange[500] }}>#</Avatar>
             </div>
             <div className=" flex flex-one">
-            <Avatar onClick={handleOpen} sx={{width: 50, height: 50, bgcolor: green[500] }}>
+            <Avatar onClick={play} sx={{width: 50, height: 50, bgcolor: green[500] }}>
                 <PhoneForwardedIcon />
             </Avatar>
 
