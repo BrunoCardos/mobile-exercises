@@ -1,0 +1,35 @@
+.flex{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.flex-one{
+    justify-content: center;
+}
+
+.container{
+    width: 250px;
+    margin: 10px auto;
+}
+
+.display{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 15px;
+    text-align: center;
+    padding: 3px;
+    margin: 50px auto;
+}
+.display div{
+    padding: 5px;
+}
+
+.modal{
+    background-color: white;
+    
+}
