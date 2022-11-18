@@ -1,11 +1,14 @@
 import { Avatar, Modal, Typography } from "@mui/material"
-import { deepOrange, green } from '@mui/material/colors';
+import { deepOrange, green, red } from '@mui/material/colors';
 import PhoneForwardedIcon from '@mui/icons-material/PhoneForwarded';
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import './Dial.css';
 import { useState } from "react";
 import { Box } from "@mui/system";
 import LinearColor from "../../Components/linearColor/LinearColor";
+import VolumeDownIcon from '@mui/icons-material/VolumeDown';
+import MicIcon from '@mui/icons-material/Mic';
+import CallEndIcon from '@mui/icons-material/CallEnd';
 
 
 function Dial(){
@@ -92,7 +95,16 @@ function Dial(){
                         <LinearColor />
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                       {display}
+                        <div className="center">
+                            <Avatar className="center" sx={{width: 90, height: 90}}/>
+                            {display} 
+                        </div>
+                       <br/><br/><br/><br/>
+                        <div className="flex">
+                            <Avatar sx={{width: 50, height: 50}}><VolumeDownIcon/></Avatar>
+                            <Avatar sx={{width: 50, height: 50}}><MicIcon/></Avatar>
+                            <Avatar onClick={handleClose} sx={{width: 50, height: 50, bgcolor: red[500] }}><CallEndIcon/></Avatar>
+                        </div>
                     </Typography>
                 </Box>
             </Modal>

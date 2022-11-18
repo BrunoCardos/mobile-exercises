@@ -31,5 +31,11 @@
 
 .modal{
     background-color: white;
-    
+    height: 350px;
+    max-width: 200px;
+}
+
+.center{
+    text-align: center;
+    margin: 10px auto;
 }
