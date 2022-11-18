@@ -5,6 +5,7 @@ import BackspaceIcon from '@mui/icons-material/Backspace';
 import './Dial.css';
 import { useState } from "react";
 import { Box } from "@mui/system";
+import LinearColor from "../../Components/linearColor/LinearColor";
 
 
 function Dial(){
@@ -88,6 +89,7 @@ function Dial(){
                 <Box className='modal' sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
                         Calling...
+                        <LinearColor />
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                        {display}
