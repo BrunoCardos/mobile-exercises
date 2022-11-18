@@ -89,7 +89,7 @@ function Dial(){
                 <Avatar onClick={(e)=> add(e)} sx={{ bgcolor: deepOrange[500] }}>#</Avatar>
             </div>
             <div className=" flex flex-one">
-            <Avatar onClick={play} sx={{width: 50, height: 50, bgcolor: green[500] }}>
+            <Avatar onClick={handleOpen} sx={{width: 50, height: 50, bgcolor: green[500] }}>
                 <PhoneForwardedIcon />
             </Avatar>
 
