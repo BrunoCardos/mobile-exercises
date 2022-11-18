@@ -28,6 +28,10 @@ function Dial(){
   };
   
 
+    function del(){
+        display.pop()
+        setDisplay([...display])
+    }
 
     let add = e => {
 
@@ -44,8 +48,8 @@ function Dial(){
                 <div>
                     {display.map(task => <span>{task}</span> )}
                 </div>
-                <div>
-                    <  BackspaceIcon/>
+                <div >
+                    < BackspaceIcon color='success' onClick={del} />
                 </div>
 
              </div>
@@ -74,8 +78,6 @@ function Dial(){
             <Avatar onClick={handleOpen} sx={{width: 50, height: 50, bgcolor: green[500] }}>
                 <PhoneForwardedIcon />
             </Avatar>
-
-
 
             <Modal
                 open={open}
