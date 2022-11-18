@@ -9,9 +9,14 @@ import LinearColor from "../../Components/linearColor/LinearColor";
 import VolumeDownIcon from '@mui/icons-material/VolumeDown';
 import MicIcon from '@mui/icons-material/Mic';
 import CallEndIcon from '@mui/icons-material/CallEnd';
+import sound from './classic.mp3'
 
 
 function Dial(){
+
+    function play(){
+        new Audio(sound).play()
+    }
 
     const [display, setDisplay] = useState([])
     const [open, setOpen] = useState(false);
