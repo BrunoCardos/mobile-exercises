@@ -13,6 +13,8 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 import Dial from '../../screen/dial/Dial';
 import Contact from '../../screen/contact/Contact';
+import MessageIcon from '@mui/icons-material/Message';
+import Messages from '../../screen/messages/Messages';
 
 
 
@@ -25,7 +27,8 @@ export default function FixedBottomNavigation() {
 
         
        {activeTab ==0 && <Dial />}
-        {activeTab==1 && <Contact />}
+       {activeTab==1 && <Contact />}
+       {activeTab==2 && <Messages />}
 
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
         <BottomNavigation
@@ -37,6 +40,7 @@ export default function FixedBottomNavigation() {
         >
           <BottomNavigationAction label="Dial" icon={<PhoneIcon />} />
           <BottomNavigationAction label="Contacts" icon={<PermContactCalendarIcon />} />
+          <BottomNavigationAction label="Messages" icon={<MessageIcon />} />
         </BottomNavigation>
       </Paper>
     </Box>
