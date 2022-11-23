@@ -10,9 +10,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CallIcon from '@mui/icons-material/Call';
 import MessageIcon from '@mui/icons-material/Message';
-import { blue, green, red } from '@mui/material/colors';
+import { blue, green } from '@mui/material/colors';
 import FormDialog from '../../Components/formDialog/FormDialog';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import Confirmation from '../../Components/confirmation/Confirmation';
 
 
 axios.defaults.baseURL = 'http://127.0.0.1:3000/';
@@ -79,13 +79,8 @@ export default function Contact() {
                                 cursor: "pointer"
                               }}
                             />
-                            <DeleteForeverIcon
-                                sx={{
-                                    marginLeft: 3,
-                                    color: red[500],
-                                    cursor: "pointer"
-                                }}
-                             />
+                            <Confirmation contactsState={[contacts, setContacts]} id={contact.id} pos={i} />
+                            
                     </ListItem>
                     <Divider variant="inset" component="li" />
                 </Box>

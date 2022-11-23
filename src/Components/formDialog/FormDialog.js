@@ -26,34 +26,41 @@ export default function FormDialog(props) {
     setOpen(false);
   };
 
-  function handleSave(){
+  function handleSave() {
     let newContact = {
-        "name": nameInput,
-        "phone": phoneInput
+      "name": nameInput,
+      "phone": phoneInput
     }
 
     axios.post(dataUrl, newContact)
-    .then(function (response) {
+      .then(function (response) {
         // handle success
         contacts.push(response.data);
         setContacts([...contacts]);;
-    })
-    .catch(function (error) { 
+      })
+      .catch(function (error) {
         // handle error
         console.log(error);
-    });
- 
+      });
+
+      setOpen(false);
+
+      
+
   }
+
+
+
 
   return (
     <div>
-     <Fab sx={{
-        position: 'absolute',
+      <Fab sx={{
+        position: 'fixed',
         bottom: 70,
         right: 10
-     }} onClick={handleClickOpen} size="medium" color="secondary" aria-label="add">
-        <AddIcon />
-      </Fab>
+      }} onClick={handleClickOpen} size="medium" color="secondary" aria-label="add">
+      <AddIcon />
+        </Fab>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Add New Contact</DialogTitle>
         <DialogContent>
@@ -67,10 +74,10 @@ export default function FormDialog(props) {
             fullWidth
             variant="outlined"
             onChange={(e) => setNameInput(e.target.value)}
-            
+
           />
 
-<TextField
+          <TextField
             margin="dense"
             id="phoneInput"
             label="Phone Number"
@@ -81,7 +88,7 @@ export default function FormDialog(props) {
           />
         </DialogContent>
         <DialogActions>
-          <Button  variant="outlined" onClick={handleClose}>Cancel</Button>
+          <Button variant="outlined" onClick={handleClose}>Cancel</Button>
           <Button variant="contained" onClick={handleSave}>Add</Button>
         </DialogActions>
       </Dialog>
